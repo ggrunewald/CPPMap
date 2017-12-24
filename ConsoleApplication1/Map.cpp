@@ -89,12 +89,34 @@ void Map::Clear()
 //returns node with the specified key
 MapNode * Map::GetNode(int key)
 {
-	return NULL;
+	MapNode * currNode = head;
+
+	//go through all the map looking for the key
+	while (currNode != NULL)
+	{
+		if (currNode->GetKey() == key)
+			break;
+
+		currNode = currNode->GetNext();
+	}
+
+	return currNode;
 }
 
 //returns the value of the node with the specified key
-int Map::GetValue(int key)
+int Map::GetData(int key)
 {
+	MapNode * currNode = head;
+
+	//go through all the map looking for the key
+	while (currNode != NULL)
+	{
+		if (currNode->GetKey() == key)
+			return currNode->GetData();
+
+		currNode = currNode->GetNext();
+	}
+
 	return -1;
 }
 
@@ -163,6 +185,6 @@ void Map::SwapValues(int a, int b)
 
 	int temp = nodeA->GetData();
 
-	nodeA->SetData(nodeB->GetData);
+	nodeA->SetData(nodeB->GetData());
 	nodeB->SetData(temp);
 }

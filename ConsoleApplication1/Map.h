@@ -20,7 +20,7 @@ public:
 	void Clear();
 
 	MapNode * GetNode(int key);
-	int GetValue(int key);
+	int GetData(int key);
 	MapNode * FindKey(int data);
 
 	bool IsEmpty();
